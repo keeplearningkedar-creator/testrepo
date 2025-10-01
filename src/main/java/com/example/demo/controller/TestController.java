@@ -12,4 +12,10 @@ public class TestController {
         return name;
     }
 
+    @GetMapping("/myaddress")
+    public String getMyAddress() {
+        var name = "Aurora";
+        return name;
+    }
+
 }
