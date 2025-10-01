@@ -7,4 +7,4 @@ COPY ./target/demo-0.0.1-SNAPSHOT.jar /app
 # Expose the port the Spring Boot application will run on
 EXPOSE 8080
 # Command to run the application
-CMD ["java", "-jar", "course-service.jar"]
+CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
