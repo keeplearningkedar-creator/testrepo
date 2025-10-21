@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.demo.model.User;
@@ -11,13 +13,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+//@EnableAutoConfiguration(exclude = {User.class}) If you want to exclude loading of a class
 public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean
+/*	@Bean
 	public CommandLineRunner demo(UserRepository userRepository) {
 		return (args) -> {
 			// Save a few users
@@ -30,6 +33,6 @@ public class DemoApplication {
 				System.out.println(user.getName() + " - " + user.getEmail());
 			}
 		};
-	}
+	}*/
 
 }
