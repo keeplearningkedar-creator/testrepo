@@ -30,23 +30,24 @@ public class UserService {
 
     @Transactional
     public User updateUserByEmail(User user) {
-        return userRepository.findByEmail(user.getEmail())
+/*        return userRepository.findByEmail(user.getEmail())
                 .map(existingUser -> {
                     existingUser.setName(user.getName());
                     // Update other fields as necessary
                     return userRepository.save(existingUser);
                 })
-                .orElseGet(() -> userRepository.save(user));
+                .orElseGet(() -> userRepository.save(user));*/
 
-/*        Optional<User> retriveduser = userRepository.findByEmail(user.getEmail());
+        Optional<User> retriveduser = userRepository.findByEmail(user.getEmail());
         if (retriveduser.isPresent()) {
             User existingUser = retriveduser.get();
             existingUser.setName(user.getName());
+            existingUser.setShippingOrders(user.getShippingOrders());
             // Update other fields as necessary
             return userRepository.save(existingUser);
         } else {
             return userRepository.save(user);
-        }*/
+        }
     }
 
     @Transactional

@@ -2,13 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
-import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Map;
 
@@ -78,7 +77,4 @@ public class TestController {
         System.out.println("Updating user: " + user.toString());
         return new ResponseEntity<User>(userService.updateUserByBokadaka(user), HttpStatus.OK);
     }
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.demo.exceptions;
 
+import com.example.demo.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
@@ -23,5 +24,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleOptimisticLockingFailure(ObjectOptimisticLockingFailureException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body("Conflict detected: The resource was updated or deleted by another transaction.");
+        //return new ResponseEntity<>(new User(),HttpStatus.CONFLICT);
     }
 }
